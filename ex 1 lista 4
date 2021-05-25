@@ -1,0 +1,57 @@
+/*Elabore um algoritmo que, a partir de um dia, mês e ano fornecidos, valide se eles compõem
+uma data válida. Não deixe de considerar os meses com 30 ou 31 dias, e o tratamento de ano
+bissexto*/
+
+#include <stdio.h> 
+#include <string.h> 
+#include <stdlib.h> 
+#include <locale.h> 
+#include <math.h> 
+#include<ctype.h>
+
+int main(){
+	
+	int dia, mes, ano;
+	bool bissexto;
+	setlocale (LC_ALL, "portuguese");
+	
+	printf("Bom dia, primeiramente para saber se sua data e válida\n");
+	printf("Preciso saber o dia:\n");
+	scanf("%d", &dia);
+	
+	if (dia >= 31)
+    do{	printf("Digite um dia válido...\n");
+        scanf("%d", &dia);
+   
+}while (dia >= 31);
+
+    printf("Agora digite o mês do ano...\n");
+    scanf("%d", &mes);
+    
+    if (mes >= 13)
+    do{	printf("Digite um mês válido\n");
+    	scanf("%d", &mes);
+    	
+}while (mes >= 13);
+
+    printf("Digite um ano: ");
+	scanf("%d", &ano);
+
+	if (ano % 400 == 0) {
+		bissexto = true;		
+}
+	else if ((ano % 4 == 0) && (ano % 100 != 0)) {
+		bissexto = true;		
+}
+	else {
+		bissexto = false;
+}
+ 	if (bissexto == true) {
+		printf("O ano é bissexto!\n");
+	} else {
+		printf("O ano não é bissexto!\n");
+	}
+	printf("SUA DATA %d / %d / %d", dia, mes, ano);
+}
+
+   
