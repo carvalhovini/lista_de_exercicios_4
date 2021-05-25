@@ -1,0 +1,42 @@
+#include <stdio.h> 
+#include <string.h> 
+#include <stdlib.h> 
+#include <locale.h> 
+#include <math.h> 
+#include <ctype.h>
+
+int main()
+{
+    int dia,mes,
+    dias[13]={0,21,20,21,21,21,21,22,23,23,23,22,22};
+    char signos[13][12]={"Capricornio", "Aquario", "Peixes", "Aries", "Touro", "Gemeos", "Cancer", "Leao", "virgem", "libra", "Escorpiao", "Sagitario", "Capricornio"};
+
+do{
+    printf("Preciso de alguns dados para saber seu signo\n");
+    printf("Qual o dia do seu nascimento\n");
+        scanf("%d",&dia);
+    
+system("cls");
+
+    printf("Qual o mes do seu nascimento\n");
+        scanf("%d",&mes);
+        system("cls");
+
+    if (dia < dias[mes])
+    mes = mes-1;
+
+        printf("Seu signo e %s\n\n",signos[mes]);
+        
+system("pause");
+system("cls");
+
+       }while(dia != 0 || mes != 0);
+       
+system("cls");
+
+    printf("Programa fializado\n");
+       
+system("PAUSE");
+
+return(0);
+}
